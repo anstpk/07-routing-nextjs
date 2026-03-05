@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
 }) {
@@ -19,7 +20,10 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <TanStackProvider>
           <Header />
-          <main>{children}</main>
+          <main>
+            {children}
+            {modal} {/* Рендеримо модалку тут */}
+            </main>
           <Footer />
         </TanStackProvider>
       </body>
