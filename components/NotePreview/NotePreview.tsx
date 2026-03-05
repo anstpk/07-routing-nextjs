@@ -31,7 +31,7 @@ export default function NotePreview({ id }: NotePreviewProps) {
     <div className={css.container}>
       <header className={css.header}>
         <h2 className={css.title}>{note.title}</h2>
-        <span className={css.tag}>#{note.tag}</span>
+        <span className={css.tag}>#{note.tags && note.tags[0]}</span>
       </header>
       <hr className={css.divider} />
       <div className={css.content}>
