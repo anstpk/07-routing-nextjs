@@ -8,13 +8,9 @@ export default function FilterLayout({
   sidebar: React.ReactNode;
 }) {
   return (
-    <div className={css.container}>
-      <aside className={css.sidebar}>
-        {sidebar}
-      </aside>
-      <main className={css.content}>
-        {children} {/* Тут відобразиться вміст із [[...slug]]/page.tsx */}
-      </main>
+    <div className="container">
+      <aside>{sidebar}</aside>
+      <main>{children}</main>
     </div>
   );
 }

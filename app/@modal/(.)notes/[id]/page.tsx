@@ -1,15 +1,15 @@
-'use client';
+import { fetchNoteById } from '@/lib/api';
+import NotePreview from './NotePreview.client';
 
-import { useRouter } from 'next/navigation';
-import Modal from '@/components/Modal/Modal';
-import NotePreview from '@/components/NotePreview/NotePreview';
+export default async function NoteModalPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const note = await fetchNoteById(id);
 
-export default function NoteInterceptPage({ params }: { params: { id: string } }) {
-  const router = useRouter();
+  if (!note) return null;
 
-  return (
-    <Modal onClose={() => router.back()}>
-      <NotePreview id={params.id} />
-    </Modal>
-  );
+  return <NotePreview note={note} />;
 }
