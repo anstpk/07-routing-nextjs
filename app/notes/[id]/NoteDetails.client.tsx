@@ -32,7 +32,7 @@ export default function NoteDetailsClient() {
       
       <header className={css.header}>
         <h1 className={css.title}>{note.title}</h1>
-        {note.tags && <span className={css.tags}>{note.tags}</span>}
+        {note.tag && <span className={css.tag}>{note.tag}</span>}
       </header>
 
       <div className={css.content}>

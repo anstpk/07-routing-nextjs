@@ -29,7 +29,7 @@ export default function NoteList({ notes }: NoteListProps) {
             <div className={css.header}>
               <h3 className={css.title}>{note.title}</h3>
                {/* Відображаємо тег (Вимога ментора) */}
-              <span className={css.tag}>{note.tags && note.tags[0]}</span>
+              <span className={css.tag}>{note.tag && note.tag}</span>
             </div>
             <p className={css.content}>{note.content}</p>
           </Link>
