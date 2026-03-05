@@ -17,6 +17,7 @@ export default function NotePreview({ id }: NotePreviewProps) {
   const { data: note, isLoading, isError } = useQuery({
     queryKey: ['note', id],
     queryFn: () => fetchNoteById(id),
+    refetchOnMount: false, // Запобігає повторному запиту при монтуванні
   });
 
   const handleClose = () => router.back();
